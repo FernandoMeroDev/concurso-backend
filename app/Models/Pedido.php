@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Pedido extends Model
 {
     //
-    protected $table =['pedido','fecha_entrega','estado'] ;
+    protected $table =['pedido','direccion','fecha_entrega','estado'] ;
 
 }

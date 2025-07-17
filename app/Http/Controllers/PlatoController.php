@@ -1,4 +1,5 @@
 <?php
+use App\Models\Plato;
 
 namespace App\Http\Controllers; 
 
@@ -8,7 +9,7 @@ class PlatoController extends Controller
 {
     public function index(){ 
         header('Content-Type: application/json');
-        return Client::all()->toJson();
+        return Plato::all()->toJson();
     }
     //
 }

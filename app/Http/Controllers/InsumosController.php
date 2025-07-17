@@ -20,7 +20,7 @@ class InsumosController extends Controller
             'cantidad' => $request->input('cantidad'),
         ]);
         header('Content-Type: application/json');
-        return json_encode([
+         return json_encode([
             'message' => 'Guardado'
         ]);
     }
