@@ -1,4 +1,7 @@
 use catering;
+
+drop table if exists cliente, pedido, plato, insumos, cli_ped, pla_ins;
+
 create table cliente(
     id int AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
@@ -19,7 +22,7 @@ create table plato(
     nombre VARCHAR(50) NOT NULL
     created_at timestamp NULL DEFAULT NULL,
     updated_at timestamp NULL DEFAULT NULL,
-)
+);
 
 create table insumos(
     id int AUTO_INCREMENT PRIMARY KEY
@@ -27,7 +30,7 @@ create table insumos(
     cantidad int NOT
     created_at timestamp NULL DEFAULT NULL,
     updated_at timestamp NULL DEFAULT NULL,
-)
+);
 
 ----TABLAS INTEEMEDIAS 
 ---tabla ntermedia entre cliente y pedido  cli_ped
@@ -37,7 +40,7 @@ create Table cli_ped(
     id_pedido int,
     FOREIGN KEY(id_cliente) references cliente(id),
     FOREIGN KEY(id_pedido) references pedido(id)
-)
+);
  
 ---tabla intermedia entre pedido y plato 
 CREATE Table ped_plat(
@@ -46,7 +49,7 @@ CREATE Table ped_plat(
     id_plato int,
     FOREIGN KEY(id_pedido) references pedido(id),
     FOREIGN KEY(id_plato) references plato(id)
-)
+);
 
 
 ---tabla intermedia entre platos y insumos 

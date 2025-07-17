@@ -31,4 +31,6 @@ class PedidoController extends Controller
         ]);
         return json_encode(['message' => 'Actualizado']);
     }
+
+    public function
 }
