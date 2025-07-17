@@ -38,7 +38,7 @@ create Table cli_ped(
     FOREIGN KEY(id_cliente) references cliente(id),
     FOREIGN KEY(id_pedido) references pedido(id)
 )
-
+ 
 ---tabla intermedia entre pedido y plato 
 CREATE Table ped_plat(
     id int PRIMARY KEY,
