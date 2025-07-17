@@ -15,14 +15,16 @@ class ClientController extends Controller
 
     public function create(Request $request)
     {
+        header('Conte-Type: application/json');
         Client::create([
-            'nombre' => $request->get('nombre'),
+            'nombre' => $request->input('nombre'),
         ]);
         return json_encode(['message' => 'Guardado']);
     }
 
     public function update(Request $request, Client $client)
     {
+        header('Conte-Type: application/json');
         $client->update([
             'nombre' => $request->get('nombre'),
         ]);
