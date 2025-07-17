@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Insumos extends Model
 {
     //
-    protected $table='insumos'
+    protected $table='insumos';
 
-    protected $fillable='nombre'
-    protected $fillable='cantidad'
+    protected $fillable=['nombre','cantidad'];
+  
 }

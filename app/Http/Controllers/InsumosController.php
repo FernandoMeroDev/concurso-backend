@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class InsumosController extends Controller
 {
     //
-    create function index()
+    public function index()
     {
         header('Content-Type: application/json');
         return Insumos::all()->toJson();
