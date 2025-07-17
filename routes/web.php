@@ -8,3 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/clients', [ClientController::class, 'index']);
+
+Route::post('/clients/store', [ClientController::class, 'create']);
+
+Route::put('/clients/update/{client}', [ClientController::class, 'update']);

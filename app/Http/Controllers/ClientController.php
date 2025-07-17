@@ -20,4 +20,12 @@ class ClientController extends Controller
         ]);
         return json_encode(['message' => 'Guardado']);
     }
+
+    public function update(Request $request, Client $client)
+    {
+        $client->update([
+            'nombre' => $request->get('nombre'),
+        ]);
+        return json_encode(['message' => 'Actualizado']);
+    }
 }
