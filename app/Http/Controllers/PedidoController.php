@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Pedido;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
@@ -15,18 +15,20 @@ class PedidoController extends Controller
 
     public function create(Request $request)
     {
-        Client::create([
+        Pedido::create([
             'fecha_entrega'=>$request->get('fecha_entrega'),
+            'direccion'=>$request->get('direccion'),
             'estado'=>$request->get('estado'),
 
 
         ]);
         return json_encode(['message'=>'Guardado']);
     }
-    public function update(Request $request, Client $client)
+    public function update(Request $request, Pedido $pedido)
     {
-        $client->update([
+        $pedido->update([
             'fecha_entrega'=>$request->get('fecha_entrega'),
+            'direccion'=>$request->get('direccion'),
             'estado'=>$request->get('estado'),
         ]);
         return json_encode(['message' => 'Actualizado']);
