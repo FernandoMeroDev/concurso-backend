@@ -2,31 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Insumos;
 use Illuminate\Http\Request;
 
 class InsumosController extends Controller
 {
-    //
     public function index()
     {
         header('Content-Type: application/json');
         return Insumos::all()->toJson();
     }
-     public function create(Request $request)
-    {
-        Client::create([
-            'nombre' => $request->get('nombre'),
-            'cantidad' => $request->get('cantidad'),
-        ]);
-        return json_encode(['message' => 'Guardado']);
-    }
 
-    public function update(Request $request, Client $client)
+    public function store(Request $request)
     {
-        $client->update([
-            'nombre' => $request->get('nombre'),
-            'cantidad' => $request->get('cantidad'),
+        Insumos::create([
+            'nombre' => $request->input('nombre'),
+            'cantidad' => $request->input('cantidad'),
         ]);
-        return json_encode(['message' => 'Actualizado']);
+        header('Content-Type: application/json');
+        return json_encode([
+            'message' => 'Guardado'
+        ]);
     }
 }

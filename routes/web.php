@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\InsumosController;
+use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\PlatoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,10 +31,7 @@ Route::put('/pedido/update/{client}', [PedidoController::class, 'update']);
 //insumos Routes
 Route::get('/insumos', [InsumosController::class, 'index']);
 
-Route::post('insumos/store', [InsumosController::class, 'create']);
+Route::post('/insumos/store', [InsumosController::class, 'store']);
 
-Route::put('/insumos/update/{client}', [InsumosController::class, 'update']);
-
-
-
+Route::put('/insumos/update/{insumo}', [PedidoController::class, 'update']);
  

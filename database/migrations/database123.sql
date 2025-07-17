@@ -14,6 +14,7 @@ create table pedido(
     id int AUTO_INCREMENT PRIMARY Key,
     fecha_entrega date,
     estado BOOLEAN,
+    direccion VARCHAR(255),
     created_at timestamp NULL DEFAULT NULL,
     updated_at timestamp NULL DEFAULT NULL
 );
