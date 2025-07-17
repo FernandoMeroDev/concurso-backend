@@ -16,7 +16,6 @@ class ClientController extends Controller
     public function create(Request $request)
     {
         header('Conte-Type: application/json');
-        return json_encode(['message' => 'Guardado']);;
         Client::create([
             'nombre' => $request->input('nombre'),
         ]);
